@@ -1,1 +1,1 @@
-View site at itsjay.me :)
+View site at http://itsjay.me :)
