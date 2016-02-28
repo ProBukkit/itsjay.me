@@ -63,9 +63,3 @@ function setupDrawingCanvas() {
 	grd.addColorStop(1,"#4dff4d");
 	canvasContext.fillStyle = grd;
 }
-
-const fs = require('fs');
-
-fs.readdir('./music', function(data) {
-  console.log(data)
-});
