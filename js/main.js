@@ -14,18 +14,14 @@ window.onload = function() {
 	setupWebAudio();
 	setupDrawingCanvas();
 	draw();
+	window.addEventListener('resize', resizeCanvas, false);
 }
 
-(function() {
-
-        window.addEventListener('resize', resizeCanvas, false);
         
-        function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-})();
+function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+}
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -64,9 +60,8 @@ function draw() {
 	$("#particles-js").fadeIn(150).fadeOut(150);
 }
 function setupDrawingCanvas() {
+	resizeCanvas();
 	canvas = document.createElement('canvas');
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
 	document.body.appendChild(canvas);
 	canvasContext = canvas.getContext('2d');
 	var grd=canvasContext.createLinearGradient(0,0,canvas.width,canvas.height);
