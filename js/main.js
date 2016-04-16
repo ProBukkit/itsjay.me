@@ -60,8 +60,8 @@ function draw() {
 	$("#particles-js").fadeIn(150).fadeOut(150);
 }
 function setupDrawingCanvas() {
-	resizeCanvas();
 	canvas = document.createElement('canvas');
+	resizeCanvas();
 	document.body.appendChild(canvas);
 	canvasContext = canvas.getContext('2d');
 	var grd=canvasContext.createLinearGradient(0,0,canvas.width,canvas.height);
