@@ -19,9 +19,8 @@ window.onload = function() {
 
         
 function resizeCanvas() {
-	canvas.parentNode.removeChild(canvas)
+	if(document.contains(canvas)) canvas.parentNode.removeChild(canvas);
 	setupDrawingCanvas();
-
 }
 
 function getRandomInt(min, max) {
