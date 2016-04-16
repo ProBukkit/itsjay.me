@@ -12,7 +12,6 @@ var analyser, canvas, canvasContext;
 
 window.onload = function() {
 	setupWebAudio();
-	setupDrawingCanvas();
 	resizeCanvas();
 	draw();
 	window.addEventListener('resize', resizeCanvas, false);
@@ -22,8 +21,6 @@ window.onload = function() {
 function resizeCanvas() {
 	canvas.parentNode.removeChild(canvas)
 	setupDrawingCanvas();
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
 
 }
 
@@ -65,6 +62,8 @@ function draw() {
 }
 function setupDrawingCanvas() {
 	canvas = document.createElement('canvas');
+	canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 	document.body.appendChild(canvas);
 	canvasContext = canvas.getContext('2d');
 	var grd=canvasContext.createLinearGradient(0,0,canvas.width,canvas.height);
