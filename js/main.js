@@ -16,6 +16,17 @@ window.onload = function() {
 	draw();
 }
 
+(function() {
+
+        window.addEventListener('resize', resizeCanvas, false);
+        
+        function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+})();
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
