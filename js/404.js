@@ -20,3 +20,5 @@ setInterval(function() {
   }
   textHidden = !textHidden;
 }, 300);
+
+setTimeout(function(){ document.location = "/" }, 5000);
