@@ -2,13 +2,38 @@ var messageLength = 0;
 var message = 'Sorry, You ventured too far into the wilderness...';
 var div = document.getElementById("message");
 
-function type() {
-  div.innerHTML = (message.substr(0, messageLength++));
-  if (messageLength < message.length + 1) {
-    setTimeout('type()', 50);
+var count = 5;
+function countdown(){
+  div.innerHTML = div.innerHTML.substr(0, div.innerHTML.length-1) + count--;
+  if(count > 0){
+    setTimeout('countdown()', 1000);
+  } else {
+    window.location = "/";
   }
 }
-type();
+function erase(){
+  div.innerHTML = message.substr(0, messageLength--);
+  if (messageLength+1 > 0) {
+    setTimeout('erase()', 50);
+  } else {
+    message = "Redirecting in  ";
+    type(false);
+  }
+}
+
+function type(bool) {
+  div.innerHTML = (message.substr(0, messageLength++));
+  if (messageLength < message.length + 1) {
+    setTimeout('type('+bool+')', 50);
+  } else {
+    if(bool){
+     erase() 
+   } else {
+     countdown();
+   }
+  }
+}
+type(true);
 
 var cursor = document.getElementById("cursor");
 var textHidden = true;
@@ -20,5 +45,3 @@ setInterval(function() {
   }
   textHidden = !textHidden;
 }, 300);
-
-setTimeout(function(){ document.location = "/" }, 5000);
