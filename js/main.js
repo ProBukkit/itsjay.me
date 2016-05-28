@@ -55,7 +55,7 @@ function draw() {
 	analyser.getByteFrequencyData(freqByteData);
 	canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 	for (var i = 0; i < freqByteData.length; i++) {
-		canvasContext.fillRect(i*2.5, canvas.height - freqByteData[i]*canvas.height/225, 1, canvas.height);
+		canvasContext.fillRect(i*3, canvas.height - freqByteData[i]*canvas.height/250, 1, canvas.height);
 	}
 	$("#particles-js").fadeIn(150).fadeOut(150);
 }
