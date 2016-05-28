@@ -66,7 +66,13 @@ function setupDrawingCanvas() {
 	document.body.appendChild(canvas);
 	canvasContext = canvas.getContext('2d');
 	var grd=canvasContext.createLinearGradient(0,0,canvas.width,canvas.height);
-	grd.addColorStop(0,"red");
+	grd.addColorStop(0,"#FF0000");
+	grd.addColorStop(0.15,"#FFFF00")
+	grd.addColorStop(0.30,"#00FF00")
+	grd.addColorStop(0.50,"#00FFFF")
+	grd.addColorStop(0.65,"#0000FF")
+	grd.addColorStop(0.80,"#FF00FF")
+	grd.addColorStop(1,"#FF0000")
 	grd.addColorStop(1,"white");
 	canvasContext.fillStyle = grd;
 }
