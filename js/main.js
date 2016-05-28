@@ -66,7 +66,7 @@ function setupDrawingCanvas() {
 	document.body.appendChild(canvas);
 	canvasContext = canvas.getContext('2d');
 	var grd=canvasContext.createLinearGradient(0,0,canvas.width,canvas.height);
-	grd.addColorStop(0,"#66ffff");
-	grd.addColorStop(1,"#4dff4d");
+	grd.addColorStop(0,"red");
+	grd.addColorStop(1,"white");
 	canvasContext.fillStyle = grd;
 }
