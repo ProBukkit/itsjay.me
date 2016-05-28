@@ -73,6 +73,5 @@ function setupDrawingCanvas() {
 	grd.addColorStop(0.65,"#0000FF")
 	grd.addColorStop(0.80,"#FF00FF")
 	grd.addColorStop(1,"#FF0000")
-	grd.addColorStop(1,"white");
 	canvasContext.fillStyle = grd;
 }
