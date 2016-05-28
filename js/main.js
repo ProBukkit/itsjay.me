@@ -55,7 +55,7 @@ function draw() {
 	analyser.getByteFrequencyData(freqByteData);
 	canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 	for (var i = 0; i < freqByteData.length; i++) {
-		canvasContext.fillRect(i*2.5, 0, 0, canvas.height);
+		canvasContext.fillRect(i*2.5, canvas.height - freqByteData[i]*canvas.height/225, 1, canvas.height);
 	}
 	$("#particles-js").fadeIn(150).fadeOut(150);
 }
@@ -65,7 +65,7 @@ function setupDrawingCanvas() {
         canvas.height = window.innerHeight;
 	document.body.appendChild(canvas);
 	canvasContext = canvas.getContext('2d');
-	var grd=canvasContext.fillRect(i*2.5, canvas.height - freqByteData[i]*canvas.height/225, 1, canvas.height);
+	var grd=canvasContext.createLinearGradient(0,0,canvas.width,canvas.height);
 	grd.addColorStop(0,"red");
 	grd.addColorStop(1,"white");
 	canvasContext.fillStyle = grd;
