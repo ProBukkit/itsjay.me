@@ -36,8 +36,7 @@ audio.addEventListener('ended', function () {
     audio.src = "./music/" + playlist[i];
     audio.play();
 }, true);
-audio.volume = 0.025;
-audio.mute = true;
+audio.volume = 0.01;
 audio.loop = false;
 audio.src = "./music/" + playlist[getRandomInt(0, playlist.length-1)];
 audio.play();
