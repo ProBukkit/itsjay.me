@@ -1,9 +1,7 @@
 .glitch {
   color: white;
   font-size: 10em;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
   margin-top: 10%;
 }
 
@@ -75,9 +73,9 @@
 .glitch:after {
   content: attr(data-text);
   position: absolute;
-  left: 2px;
+  left: 50%;
+  transform: translateX(-50%);
   text-shadow: -1px 0 red;
-  top: 0;
   color: white;
   background: #00B2EE;
   overflow: hidden;
@@ -153,9 +151,9 @@
 .glitch:before {
   content: attr(data-text);
   position: absolute;
-  left: -2px;
   text-shadow: 1px 0 blue;
-  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
   background: black;
   overflow: hidden;
