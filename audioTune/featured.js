@@ -11,6 +11,7 @@ window.onload = function() {
 	setupWebAudio();
   setupDrawingCanvas();
 	draw();
+  window.addEventListener('resize', resizeCanvas, false);
 }
 
 var audio = new Audio();
@@ -38,7 +39,7 @@ function draw() {
 }
 function setupDrawingCanvas() {
 	canvas = document.getElementById("featured-canvas");
-	canvas.width = document.getElementById("featured").clientWidth;
+	canvas.width = $("#featured").width();
 	canvasContext = canvas.getContext('2d');
 	var grd=canvasContext.createLinearGradient(0,0,canvas.width,canvas.height);
 	grd.addColorStop(0,"#FF0000");
@@ -49,4 +50,18 @@ function setupDrawingCanvas() {
 	grd.addColorStop(0.80,"#FF00FF")
 	grd.addColorStop(1,"#FF0000")
 	canvasContext.fillStyle = grd;
+}
+
+
+function resizeCanvas() {
+  	canvas.width = $("#featured").width();
+    var grd=canvasContext.createLinearGradient(0,0,canvas.width,canvas.height);
+  	grd.addColorStop(0,"#FF0000");
+  	grd.addColorStop(0.15,"#FFFF00")
+  	grd.addColorStop(0.30,"#00FF00")
+  	grd.addColorStop(0.50,"#00FFFF")
+  	grd.addColorStop(0.65,"#0000FF")
+  	grd.addColorStop(0.80,"#FF00FF")
+  	grd.addColorStop(1,"#FF0000")
+  	canvasContext.fillStyle = grd;
 }
