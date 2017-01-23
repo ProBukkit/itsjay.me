@@ -1,0 +1,49 @@
+.navbar {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  transition: all .5s ease;
+  padding: 40px;
+  height: 80px;
+}
+a {
+  color: white;
+}
+body {
+  background: white;
+  font-family: 'Open Sans', sans-serif !important;
+  padding-top: 100px;
+}
+.navbar-brand,.navbar-brand:active {
+  color: white !important;
+  font-weight: bold;
+  font-size: 3em;
+}
+.fa-headphones {
+  font-size: 3.25em;
+}
+.navbar-default {
+  margin: 10px 0;
+  padding: 14px 0;
+  background-color: #0f52d8;
+}
+.navbar-nav a {
+  color: white !important;
+  font-size: 1em;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 5px;
+  border-width: 2px;
+}
+.create-account {
+  border-color: white !important;
+}
+.container {
+  position: relative;
+}
+.featured {
+  color: #0f52d8 !important;
+  -vendor-animation-duration: 4s;
+  -vendor-animation-delay: 3s;
+  -vendor-animation-iteration-count: 1;
+}
