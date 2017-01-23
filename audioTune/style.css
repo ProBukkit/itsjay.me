@@ -39,7 +39,6 @@ body {
   border-color: white !important;
 }
 .featured {
-  background: black;
   color: #0f52d8 !important;
   -vendor-animation-duration: 4s;
   -vendor-animation-delay: 3s;
