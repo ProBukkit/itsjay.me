@@ -43,7 +43,20 @@ body {
   -vendor-animation-duration: 4s;
   -vendor-animation-delay: 3s;
   -vendor-animation-iteration-count: 1;
+  position: relative;
 }
-.featured-canvas {
+.fa-pause-circle-o, .fa-play-circle-o{
+  font-size: 3em;
+  z-index: 9999;
+  right: 35px;
+  bottom: 29px;
+  position: absolute;
+}
+#volumeControl {
+  z-index: 9999;
+  right: 2.5%;
+  bottom: 29px;
+  width: 10px;
   height: 100px;
+  position: absolute;
 }
