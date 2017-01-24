@@ -65,3 +65,26 @@ function resizeCanvas() {
   	grd.addColorStop(1,"#FF0000")
   	canvasContext.fillStyle = grd;
 }
+
+$('#volumeControl').slider({
+    orientation: "vertical",
+    value: audio.volume,
+    min: 0,
+    max: 1,
+    range: 'min',
+    animate: true,
+    step: .01,
+    slide: function(e, ui) {
+        audio.volume = ui.value;
+    }
+});
+
+$('.controls').click(function() {
+  if (audio.paused == false) {
+      audio.pause();
+			document.getElementById("pause-play").className = "controls fa fa-play-circle-o";
+  } else {
+      audio.play();
+			document.getElementById("pause-play").className = "controls fa fa-pause-circle-o";
+  }
+});
