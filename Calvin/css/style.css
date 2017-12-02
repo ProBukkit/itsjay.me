@@ -27,7 +27,7 @@ body {
   text-align: center;
 }
 .thisSlide {
-  background: #ff0000 !important;
+  background: #19e8b4 !important;
 }
 .scroller ul {
   list-style: none;
@@ -55,6 +55,9 @@ body {
   .content h2 {
     font-size: 2em !important;
   }
+  .content h3 {
+    font-size: 2em !important;
+  }
   .scroller {
     display: none !important;
   }
@@ -69,16 +72,20 @@ body {
   flex-direction: column;
   padding: 60px;
   width: 60%;
-  height: 50%;
 }
 .content-head,
 .content-body {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-.content h1 {
+.content h3 {
+  text-align: left;
+  font-size: 4em;
+  font-family: "Raleway", sans-serif;
+}
+.content h1,
+h3 {
   font-size: 15em;
   font-weight: 400;
   margin: 0;
