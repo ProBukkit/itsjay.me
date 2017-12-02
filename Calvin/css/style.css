@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata");
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  margin: 0;
+  overflow: hidden;
+}
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+.scroller {
+  width: 50px;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  transform: translateX(-100%) perspective(1px) translateY(-50%);
+  top: 50%;
+  text-align: center;
+}
+.thisSlide {
+  background: #ff0000 !important;
+}
+.scroller ul {
+  list-style: none;
+  text-align: center;
+  display: inline-block;
+}
+.scroller ul li span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: black;
+  display: block;
+  margin: 10px 0;
+
+  transition-timing-function: ease-out;
+  transition: 0.25s;
+}
+@media only screen and (max-width: 980px) {
+  .content {
+    width: 70% !important;
+  }
+  .content h1 {
+    font-size: 5em !important;
+  }
+  .content h2 {
+    font-size: 2em !important;
+  }
+  .scroller {
+    display: none !important;
+  }
+}
+.content {
+  font-family: "Raleway", sans-serif;
+  border-radius: 30px;
+  box-shadow: 0 10px 60px #ccc;
+  z-index: 999;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  width: 60%;
+  height: 50%;
+}
+.content-head,
+.content-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.content h1 {
+  font-size: 15em;
+  font-weight: 400;
+  margin: 0;
+  font-family: Bombing;
+}
+.content h2 {
+  font-size: 5em;
+  font-weight: 200;
+}
