@@ -77,9 +77,18 @@ body {
   width: 60%;
   justify-content: space-between;
 }
-.content-body .details p img {
-  width: 100px;
-  height: auto;
+pre {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+.details p {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: justify;
+  font-size: 2em;
+}
+.details {
+  display: table;
 }
 .content-head,
 .content-body {
@@ -90,6 +99,12 @@ body {
 .content-body img {
   width: 32%;
   height: auto;
+}
+.details > img {
+  width: 100px;
+  height: auto;
+  vertical-align: middle;
+  display: table-cell;
 }
 .image-grid {
   display: flex;
