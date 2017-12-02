@@ -4,7 +4,6 @@ Particles.init({
   color: "#19e8b4"
 });
 const scroller = e => {
-  console.log(e);
   if (e.deltaY > 0) {
     const current = $(".content:visible:first");
     const next = current.next(".content");
