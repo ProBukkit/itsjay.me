@@ -1,7 +1,7 @@
 Particles.init({
   selector: ".background",
   sizeVariations: 5,
-  color: "#ff0000"
+  color: "#19e8b4"
 });
 const scroller = e => {
   console.log(e);
