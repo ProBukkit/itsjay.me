@@ -21,7 +21,7 @@ function getRandomInt (min, max) {
 const audio = new window.Audio()
 
 let i = 0
-const playlist = ['Alan Walker - Fade.mp3']
+const playlist = ['Alan Walker - Fade.mp3', 'MachinimaSound.com_-_Dance_of_the_Pixies.mp3', 'Machinimasound.com_-_Remember_the_Dreams.mp3', 'Machinimasound.com_-_September_Sky.mp3', 'MachinimaSound.com_-_Shadows_of_the_Mind.mp3', 'Magnetic.Man.-.I.Need.Air.edit.mp3']
 
 audio.addEventListener('ended', function () {
   i = ++i < playlist.length ? i : 0
