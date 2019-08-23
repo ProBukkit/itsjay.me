@@ -1,11 +1,13 @@
 let analyser, canvas, canvasContext
 
-window.onload = function () {
+const startMusic = function () {
   setupWebAudio()
   resizeCanvas()
   draw()
   window.addEventListener('resize', resizeCanvas, false)
 }
+
+document.getElementById('music').onmouseover = startMusic
 
 function resizeCanvas () {
   if (document.contains(canvas)) canvas.parentNode.removeChild(canvas)
