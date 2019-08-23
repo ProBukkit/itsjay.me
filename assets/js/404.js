@@ -6,7 +6,7 @@ var count = 5
 function countdown () {
   div.innerHTML = div.innerHTML.substr(0, div.innerHTML.length - 1) + count--
   if (count > 0) {
-    setTimeout('countdown()', 1000)
+    window.setTimeout(countdown, 1000)
   } else {
     window.location = '/'
   }
@@ -14,7 +14,7 @@ function countdown () {
 function erase () {
   div.innerHTML = message.substr(0, messageLength--)
   if (messageLength + 1 > 0) {
-    setTimeout('erase()', 50)
+    window.setTimeout(erase, 50)
   } else {
     message = 'Redirecting in  '
     type(false)
@@ -24,7 +24,7 @@ function erase () {
 function type (bool) {
   div.innerHTML = (message.substr(0, messageLength++))
   if (messageLength < message.length + 1) {
-    setTimeout('type(' + bool + ')', 50)
+    window.setTimeout(type(bool), 50)
   } else {
     if (bool) {
       erase()
@@ -44,4 +44,4 @@ setInterval(function () {
     cursor.style.visibility = 'hidden'
   }
   textHidden = !textHidden
-}, 300)
+}, 200)
