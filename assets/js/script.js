@@ -23,14 +23,14 @@ const startMusic = function () {
   audio.loop = false
   audio.src = './assets/music/' + playlist[getRandomInt(0, playlist.length - 1)]
   audio.play()
-  function setupWebAudio () {
-    var audioContext = new (window.AudioContext || window.webkitAudioContext)()
-    analyser = audioContext.createAnalyser()
-    var source = audioContext.createMediaElementSource(audio)
-    source.connect(analyser)
-    analyser.connect(audioContext.destination)
-    audio.play()
-  }
+}
+
+function setupWebAudio () {
+  var audioContext = new (window.AudioContext || window.webkitAudioContext)()
+  analyser = audioContext.createAnalyser()
+  var source = audioContext.createMediaElementSource(audio)
+  source.connect(analyser)
+  analyser.connect(audioContext.destination)
 }
 
 document.getElementById('music').onmouseover = startMusic
