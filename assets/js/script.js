@@ -33,7 +33,7 @@ function setupWebAudio () {
   analyser.connect(audioContext.destination)
 }
 
-document.getElementById('music').onmouseover = startMusic
+document.getElementById('music').onclick = startMusic
 
 function resizeCanvas () {
   if (document.contains(canvas)) canvas.parentNode.removeChild(canvas)
