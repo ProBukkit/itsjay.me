@@ -1,4 +1,4 @@
-let analyser, canvas, canvasContext
+var analyser, canvas, canvasContext
 let musicStarted = false
 
 const startMusic = function () {
