@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    background: black;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.profile {
+    font-family: 'Livvic', sans-serif;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 3px #ccc;
+    z-index: 999;
+    text-align: center;
+    background: #fff;
+    width: 400px;
+    margin: auto;
+    z-index: 10;
+    margin-top: 125px;
+    text-rendering: geometricPrecision;
+}
+
+.profile h1 {
+    font-size: 3.5em;
+    padding: 0;
+    margin: 0;
+    color: #232323;
+}
+
+.profile h2 {
+    font-size: 1em;
+    text-align: center;
+}
+
+.profile ul {
+    display: inline-block;
+    text-align: initial;
+    padding: 15px;
+    margin: 0;
+}
+.profile ul li {
+    display: inline;
+    list-style-type: none;
+    float: left;
+    padding: 0 10px;
+  }
+.profile ul li a {
+    text-decoration: none;
+    color: black;
+    cursor:pointer;
+}
+#terms {
+    transition-delay: 0.25s;
+    transition: 0.5s ease;
+    height: 0;
+    opacity: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+#terms h3 {
+    font-weight: 600;
+    font-size: 1em;
+    margin: 0;
+}
+
+#terms ul {
+    margin: 0;
+}
+
+#terms ul li {
+    font-size: 13px;
+}
