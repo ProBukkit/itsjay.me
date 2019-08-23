@@ -4,9 +4,6 @@ let musicStarted = false
 const startMusic = function () {
   if (musicStarted) return
   musicStarted = true
-  resizeCanvas()
-  draw()
-  window.addEventListener('resize', resizeCanvas, false)
   const audio = new window.Audio()
   var audioContext = new (window.AudioContext || window.webkitAudioContext)()
   analyser = audioContext.createAnalyser()
@@ -26,6 +23,9 @@ const startMusic = function () {
   audio.loop = false
   audio.src = './assets/music/' + playlist[getRandomInt(0, playlist.length - 1)]
   audio.play()
+  resizeCanvas()
+  window.addEventListener('resize', resizeCanvas, false)
+  draw()
 }
 
 document.getElementById('music').onclick = startMusic
