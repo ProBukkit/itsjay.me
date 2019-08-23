@@ -1,31 +1,34 @@
-var analyser, canvas, canvasContext
+var analyser, canvas, canvasContext, audio
 let musicStarted = false
 
 const startMusic = function () {
-  if (musicStarted) return
-  musicStarted = true
-  const audio = new window.Audio()
-  var audioContext = new (window.AudioContext || window.webkitAudioContext)()
-  analyser = audioContext.createAnalyser()
-  var source = audioContext.createMediaElementSource(audio)
-  source.connect(analyser)
-  analyser.connect(audioContext.destination)
+  if (musicStarted) {
+    audio.paused ? audio.play() : audio.pause()
+  } else {
+    musicStarted = true
+    audio = new window.Audio()
+    var audioContext = new (window.AudioContext || window.webkitAudioContext)()
+    analyser = audioContext.createAnalyser()
+    var source = audioContext.createMediaElementSource(audio)
+    source.connect(analyser)
+    analyser.connect(audioContext.destination)
 
-  let i = 0
-  const playlist = ['Alan Walker - Fade.mp3', 'MachinimaSound.com_-_Dance_of_the_Pixies.mp3', 'Machinimasound.com_-_Remember_the_Dreams.mp3', 'Machinimasound.com_-_September_Sky.mp3', 'MachinimaSound.com_-_Shadows_of_the_Mind.mp3', 'Magnetic.Man.-.I.Need.Air.edit.mp3']
+    let i = 0
+    const playlist = ['Alan Walker - Fade.mp3', 'MachinimaSound.com_-_Dance_of_the_Pixies.mp3', 'Machinimasound.com_-_Remember_the_Dreams.mp3', 'Machinimasound.com_-_September_Sky.mp3', 'MachinimaSound.com_-_Shadows_of_the_Mind.mp3', 'Magnetic.Man.-.I.Need.Air.edit.mp3']
 
-  audio.addEventListener('ended', function () {
-    i = ++i < playlist.length ? i : 0
-    audio.src = './assets/music/' + playlist[i]
+    audio.addEventListener('ended', function () {
+      i = ++i < playlist.length ? i : 0
+      audio.src = './assets/music/' + playlist[i]
+      audio.play()
+    }, true)
+    audio.volume = 0.05
+    audio.loop = false
+    audio.src = './assets/music/' + playlist[getRandomInt(0, playlist.length - 1)]
     audio.play()
-  }, true)
-  audio.volume = 0.05
-  audio.loop = false
-  audio.src = './assets/music/' + playlist[getRandomInt(0, playlist.length - 1)]
-  audio.play()
-  resizeCanvas()
-  window.addEventListener('resize', resizeCanvas, false)
-  draw()
+    resizeCanvas()
+    window.addEventListener('resize', resizeCanvas, false)
+    draw()
+  }
 }
 
 document.getElementById('music').onclick = startMusic
