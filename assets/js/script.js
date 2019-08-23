@@ -73,7 +73,7 @@ function setupDrawingCanvas () {
 
 const termsOfService = () => {
   const termsDiv = document.getElementById('terms')
-  termsDiv.style.height = '150'
+  termsDiv.style.height = '140'
   termsDiv.style.opacity = '1'
 }
 
