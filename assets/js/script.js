@@ -4,12 +4,15 @@ let musicStarted = false
 const startMusic = function () {
   if (musicStarted) return
   musicStarted = true
-  setupWebAudio()
   resizeCanvas()
   draw()
   window.addEventListener('resize', resizeCanvas, false)
-
   const audio = new window.Audio()
+  var audioContext = new (window.AudioContext || window.webkitAudioContext)()
+  analyser = audioContext.createAnalyser()
+  var source = audioContext.createMediaElementSource(audio)
+  source.connect(analyser)
+  analyser.connect(audioContext.destination)
 
   let i = 0
   const playlist = ['Alan Walker - Fade.mp3', 'MachinimaSound.com_-_Dance_of_the_Pixies.mp3', 'Machinimasound.com_-_Remember_the_Dreams.mp3', 'Machinimasound.com_-_September_Sky.mp3', 'MachinimaSound.com_-_Shadows_of_the_Mind.mp3', 'Magnetic.Man.-.I.Need.Air.edit.mp3']
@@ -23,14 +26,6 @@ const startMusic = function () {
   audio.loop = false
   audio.src = './assets/music/' + playlist[getRandomInt(0, playlist.length - 1)]
   audio.play()
-}
-
-function setupWebAudio () {
-  var audioContext = new (window.AudioContext || window.webkitAudioContext)()
-  analyser = audioContext.createAnalyser()
-  var source = audioContext.createMediaElementSource(audio)
-  source.connect(analyser)
-  analyser.connect(audioContext.destination)
 }
 
 document.getElementById('music').onclick = startMusic
